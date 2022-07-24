@@ -52,7 +52,6 @@ public class Ship extends Actor
         if (Greenfoot.isKeyDown​("space")==true){
             grav = (grav-boost); 
         }
-    
         grav += grav1;
     }
     public Ship(){
