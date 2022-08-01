@@ -18,7 +18,7 @@ public class Ship extends Actor
      */
     public void act()
     {
-        getImage().scale(80,80);
+        getImage().scale(80,50);
         setImage(ship.getCurrentImage());
         if (Greenfoot.isKeyDown​("w")==true){
             grav = -3;  
@@ -32,7 +32,7 @@ public class Ship extends Actor
         else if(grav>= -1.5 && grav<=1.5){
             setRotation(0);
         }
-        if (getY() > getWorld().getHeight()){
+        /*if (getY() > getWorld().getHeight()){
             GameoverC gameover = new GameoverC();
             getWorld().addObject(gameover,300,225);
             Greenfoot.stop();
@@ -41,12 +41,7 @@ public class Ship extends Actor
             GameoverC gameover = new GameoverC();
             getWorld().addObject(gameover,300,225);
             Greenfoot.stop();
-        }
-        if (getOneIntersectingObject​(Asteroid.class) != null){
-            GameoverC gameover = new GameoverC();
-            getWorld().addObject(gameover,300,225);
-            Greenfoot.stop();
-        }
+        }*/
         setLocation(getX(), (int)(getY() + grav));
         
         if (Greenfoot.isKeyDown​("space")==true){
@@ -55,7 +50,7 @@ public class Ship extends Actor
         grav += grav1;
     }
     public Ship(){
-        getImage().scale(80,80);         
+        getImage().scale(80,50);         
     }
 }
 
