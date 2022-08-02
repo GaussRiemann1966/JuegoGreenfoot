@@ -26,12 +26,18 @@ public class ShipHitbox extends Actor
             Greenfoot.stop();
         }
         if(getOneIntersectingObject​(Asteroid.class) != null){
+            Explosion explosion = new Explosion();
+            Ship rocket = getWorld().getObjects(Ship.class).get(0);
+            getWorld().addObject(explosion,rocket.getX(),rocket.getY());
             GameoverC gameover = new GameoverC();
             getWorld().addObject(gameover,300,225);
             Greenfoot.stop();
         }
         Ship rocket = getWorld().getObjects(Ship.class).get(0);
+        //Ship2 rocket2=getWorld().getObjects(Ship2.class).get(0);
         setLocation(rocket.getX(), rocket.getY());
+        //setLocation(rocket2.getX(), rocket2.getY());
+        
         
     }
     public ShipHitbox(){
