@@ -20,6 +20,7 @@ public class Ship extends Actor
     {
         getImage().scale(80,50);
         setImage(ship.getCurrentImage());
+        //Cambio en la rotación de la nave
         if (grav>1){
             setRotation(30);
         }
@@ -29,8 +30,9 @@ public class Ship extends Actor
         else if(grav>= -1.5 && grav<=1.5){
             setRotation(0);
         }
+        //gravedad
         setLocation(getX(), (int)(getY() + grav));
-        
+        //boost de la nave
         if (Greenfoot.isKeyDown​("space")==true){
             grav = (grav-boost); 
         }

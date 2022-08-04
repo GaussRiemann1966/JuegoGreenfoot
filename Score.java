@@ -19,7 +19,6 @@ public class Score extends Actor
     public void setScore(int score){
         GreenfootImage newImage = getImage();
         newImage.clear();
-        //newImage.setColor(Color.blue);
         
         newImage.drawString("" + score,30,30);
         setImage(newImage);

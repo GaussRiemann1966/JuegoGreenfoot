@@ -11,7 +11,7 @@ public class Space extends World
     int contador = 0;
     int score1 = 0;
     int primerAste = 370;
-    //Score scoreprint = null;
+    GreenfootSound music = new GreenfootSound("mistery.wav");
     /**
      * Constructor for objects of class Space.
      * 
@@ -26,32 +26,22 @@ public class Space extends World
         //Agregar la hitbox in the same place
         addObject(hitboxRocket,100,200);
         addObject(rocket,100,200);
-        
-        //Crear y agregar score
-        /*scoreprint = new Score();
-        scoreprint.setScore(0);
-        addObject(scoreprint,100,350);*/
     }
     public void act(){
-        //addAsteroid();
-        
-        music();
+        //Agregamos la musica
+        music.playLoop();
+        //Mostrar contador
         showText("Score: " + score1, 100, 350);
         contador++;
+        //Agregar obstáculos
         if ((contador%100)==0){
         Asteroid asteroide = new Asteroid();
         addObject (asteroide, getWidth(), Greenfoot.getRandomNumber(getHeight()));
         }
+        //Contador de puntos
         if (contador==primerAste){
             score1++;
-            //scoreprint.setScore(score1);
             primerAste += 100;
         }
-    }
-    public void music(){
-        Greenfoot.playSound("musicaJ.mp3");
-    }
-    private void prepare(){
-        score1 = 0;
     }
 }
